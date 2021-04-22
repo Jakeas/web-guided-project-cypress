@@ -52,6 +52,24 @@ describe("Quotes app", () => {
     // 1. Arrange: set up, sanity checks (make sure initial state is the state we expect)
     // 2. Act: (like typing or clicking - mimicking user input)
     // 3. Assert: that the action has the effect we expect
+
+    // button is disabled is true
+    submitBtn().should("be.disabled");
+    // type in the text field
+    textInput().type("TEXT INPUT");
+    // button is disabled is true
+    submitBtn().should("be.disabled");
+    // empty the text field
+    textInput().clear();
+    // type in the author field
+    authorInput().type("AUTHOR INPUT");
+    // button is disabled is true
+    submitBtn().should("be.disabled");
+    // type in the text field
+    textInput().type("TEXT INPUT");
+    // button is disabled is false
+    submitBtn().should("not.be.disabled");
+
     // new syntax you will need for this test:
     // (a) "be.disabled"
     // (b) .clear()
