@@ -78,7 +78,7 @@ describe("Quotes app", () => {
   it("can cancel a quote", () => {
     textInput().type("TEXT INPUT");
     authorInput().type("AUTHOR INPUT");
-    cancelBtn.click();
+    cancelBtn().click();
     authorInput().should("have.value", "");
     textInput().should("have.value", "");
   });
