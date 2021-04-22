@@ -9,6 +9,7 @@ describe("Quotes app", () => {
   const authorInput = () => cy.get('input[name="author"]');
   const submitBtn = () => cy.get('button[id="submitBtn"]');
   const cancelBtn = () => cy.get('button[id="cancelBtn"]');
+
   // here go our tests
   it("sanity test to make sure tests work", () => {
     // 'expect' is an assertions
@@ -45,5 +46,11 @@ describe("Quotes app", () => {
       .should("have.value", "")
       .type("Michael Crichton")
       .should("have.value", "Michael Crichton");
+  });
+
+  it("submit button is disabled until both inputs are filled out", () => {
+    // 1. Arrange: set up, sanity checks (make sure initial state is the state we expect)
+    // 2. Act: (like typing or clicking - mimicking user input)
+    // 3. Assert: that the action has the effect we expect
   });
 });
