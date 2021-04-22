@@ -82,4 +82,16 @@ describe("Quotes app", () => {
     authorInput().should("have.value", "");
     textInput().should("have.value", "");
   });
+
+  it("can submit a new quote", () => {
+    // setup: have fun is not in the DOM
+    // act: create quote "have fun (Rhiannon)"
+    // assert: that the quote is now in the DOM
+
+    cy.contains("have fun (Rhiannon)").should("not.exist");
+    textInput().type("have fun");
+    authorInput().type("Rhiannon");
+    submitBtn().click();
+    cy.contains("have fun (Rhiannon)").should("exist");
+  });
 });
