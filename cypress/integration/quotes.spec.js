@@ -12,8 +12,8 @@ describe("Quotes app", () => {
     // usually those assertions are logically grouped together
     expect(1 + 2).to.equal(3);
     expect(2 + 2).not.to.equal(5);
-    expect({}).not.to.equal({}); // not strict == rather than ===
-    expect({}).to.eql({});
+    expect({}).not.to.equal({}); // not strict (==)
+    expect({}).to.eql({}); // strict (===)
   });
 
   it("the proper elements are showing on the screen", () => {
