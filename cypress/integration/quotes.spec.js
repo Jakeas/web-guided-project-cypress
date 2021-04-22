@@ -20,7 +20,7 @@ describe("Quotes app", () => {
   });
 
   it("the proper elements are showing on the screen", () => {
-    cy.get('input[name="text"]').should("exist");
+    textInput().should("exist");
     cy.get('input[name="foobar"]').should("not.exist");
     cy.get('input[name="author"]').should("exist");
     cy.get('button[id="submitBtn"]').should("exist");
@@ -34,7 +34,7 @@ describe("Quotes app", () => {
     // assert that they are empty
     // type in them
     // assert that the thing we typed is there
-    cy.get('input[name="text"]')
+    textInput()
       .should("have.value", "")
       .type("have fun learning React")
       .should("have.value", "have fun learning React");
